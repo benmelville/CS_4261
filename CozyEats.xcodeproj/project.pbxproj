@@ -10,6 +10,7 @@
 		1D24CF692ACF73C400B0C848 /* CozyEatsApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D24CF682ACF73C400B0C848 /* CozyEatsApp.swift */; };
 		1D24CF6D2ACF73C600B0C848 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1D24CF6C2ACF73C600B0C848 /* Assets.xcassets */; };
 		1D24CF702ACF73C600B0C848 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1D24CF6F2ACF73C600B0C848 /* Preview Assets.xcassets */; };
+		1D8C7A932AD79FE100497E90 /* FiveStarsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D8C7A922AD79FE100497E90 /* FiveStarsView.swift */; };
 		1D9242A32AD490DA00BD8BD8 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D9242A22AD490DA00BD8BD8 /* MainView.swift */; };
 		1D9242A52AD5BDE800BD8BD8 /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D9242A42AD5BDE800BD8BD8 /* ProfileView.swift */; };
 		1D9242A72AD5BE6800BD8BD8 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D9242A62AD5BE6800BD8BD8 /* HomeView.swift */; };
@@ -23,6 +24,7 @@
 		1D24CF682ACF73C400B0C848 /* CozyEatsApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CozyEatsApp.swift; sourceTree = "<group>"; };
 		1D24CF6C2ACF73C600B0C848 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		1D24CF6F2ACF73C600B0C848 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		1D8C7A922AD79FE100497E90 /* FiveStarsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FiveStarsView.swift; sourceTree = "<group>"; };
 		1D9242A22AD490DA00BD8BD8 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
 		1D9242A42AD5BDE800BD8BD8 /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
 		1D9242A62AD5BE6800BD8BD8 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
@@ -87,6 +89,7 @@
 				1D9242A62AD5BE6800BD8BD8 /* HomeView.swift */,
 				1D9242A82AD5C8AF00BD8BD8 /* SettingsView.swift */,
 				1D9242AA2AD5D4C700BD8BD8 /* FoodPreviewView.swift */,
+				1D8C7A922AD79FE100497E90 /* FiveStarsView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -176,6 +179,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1D8C7A932AD79FE100497E90 /* FiveStarsView.swift in Sources */,
 				1D9242A92AD5C8AF00BD8BD8 /* SettingsView.swift in Sources */,
 				1D24CF692ACF73C400B0C848 /* CozyEatsApp.swift in Sources */,
 				1D9242A72AD5BE6800BD8BD8 /* HomeView.swift in Sources */,

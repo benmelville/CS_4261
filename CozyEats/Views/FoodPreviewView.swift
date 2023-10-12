@@ -20,14 +20,14 @@ struct FoodPreviewView: View {
                     .resizable()
                     .scaledToFit()
                     .frame(width: 35, height: 35)
-                    .foregroundStyle(Color("lightPink"))
                 
                 Text("Ben Melville")
+                    .font(.headline)
                 Spacer()
                 Image(systemName: "ellipsis")
     
             }
-            .foregroundStyle(Color("lightPink"))
+//            .foregroundStyle(Color("lightPink"))
             .padding(.horizontal)
                         
             Image("lasagna")
@@ -40,7 +40,7 @@ struct FoodPreviewView: View {
                     .resizable()
                     .scaledToFit()
                     .frame(width: 25, height: 25)
-                    .foregroundStyle(isLiked ? Color("isLiked") : Color("lightPink"))
+                    .foregroundStyle(isLiked ? Color("isLiked") : Color.primary)
                     .onTapGesture {
                         isLiked.toggle()
                     }
@@ -48,7 +48,10 @@ struct FoodPreviewView: View {
                     .resizable()
                     .scaledToFit()
                     .frame(width: 25, height: 25)
+                
                 Spacer()
+                
+                FiveStarsView()
             }
             .padding(.horizontal)
             .font(.headline)
