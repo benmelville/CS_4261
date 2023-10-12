@@ -8,8 +8,72 @@
 import SwiftUI
 
 struct HomeView: View {
+    
+    @State var searchText: String = ""
+    
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        NavigationStack {
+            ZStack {
+                Color.tan.ignoresSafeArea()
+                
+                ScrollView {
+                    Spacer()
+                    HStack(spacing: 25.0) {
+                        VStack {
+                            Text("🍔")
+                                .font(.largeTitle)
+                            Text("American")
+                        }
+                        .frame(width: 80, height: 80)
+                        
+                        VStack {
+                            Text("🍝")
+                                .font(.largeTitle)
+                            Text("Italian")
+                        }
+                        .frame(width: 80, height: 80)
+                        
+                        VStack {
+                            Text("🥡")
+                                .font(.largeTitle)
+                            Text("Chinese")
+                        }
+                        .frame(width: 80, height: 80)
+                        
+                        VStack {
+                            Text("🌮")
+                                .font(.largeTitle)
+                            Text("Mexican")
+                        }
+                        .frame(width: 80, height: 80)
+                        
+                    }
+                    .font(.headline)
+                    
+                    Divider()
+                        .frame(height: 4)
+                        .overlay(.accent)
+                        .padding()
+                    
+                    ForEach(1..<10) { i in
+                        FoodPreviewView()
+                        Divider().frame(height: 30)
+                    }
+                }
+            }
+            .navigationTitle("Cozy Eats")
+            .searchable(text: $searchText)
+            .toolbar {
+                ToolbarItem(placement: .topBarLeading) {
+                    Image(systemName: "line.3.horizontal.decrease.circle")
+                        .resizable()
+                        .scaledToFit()
+                        .frame(width: 30, height: 30)
+                }
+            }
+            .toolbar(.visible, for: .navigationBar)
+        .toolbarBackground(Color.accentColor, for: .navigationBar)
+        }
     }
 }
 

@@ -6,3 +6,11 @@
 //
 
 import Foundation
+
+
+struct Profile {
+    let name: String
+    let userName: String
+    let profilePicture: String
+//    let imageNames: [String]
+}
