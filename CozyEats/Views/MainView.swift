@@ -13,11 +13,9 @@ struct MainView: View {
     
     var body: some View {
         TabView(selection: $selection) {
-//            Group {
                 profileViewTab
                 homeViewTab
                 settingsViewTab
-//            }
         }
         .tint(.primary)
     }

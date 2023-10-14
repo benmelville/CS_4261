@@ -42,7 +42,9 @@ struct FoodPreviewView: View {
                     .frame(width: 25, height: 25)
                     .foregroundStyle(isLiked ? Color("isLiked") : Color.primary)
                     .onTapGesture {
-                        isLiked.toggle()
+                        withAnimation(.bouncy) {
+                            isLiked.toggle()
+                        }
                     }
                 Image(systemName: "text.bubble")
                     .resizable()
