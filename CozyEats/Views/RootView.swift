@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct MainView: View {
+struct RootView: View {
     
     @State private var selection: Tab = .Home
     
@@ -28,10 +28,10 @@ struct MainView: View {
 }
 
 #Preview {
-    MainView()
+    RootView()
 }
 
-extension MainView {
+extension RootView {
     
     private var profileViewTab: some View {
         ProfileView()
