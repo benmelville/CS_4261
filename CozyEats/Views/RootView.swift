@@ -10,31 +10,48 @@ import SwiftUI
 struct RootView: View {
     
     @State private var selection: Tab = .Home
+    @State private var showSignInView: Bool = true
+    @State private var userType: String = "customer"
     
     var body: some View {
-        TabView(selection: $selection) {
-                profileViewTab
-                homeViewTab
-                settingsViewTab
+        
+        if showSignInView {
+            AuthenticationView(showSignInView: $showSignInView, userType: $userType)
+        } else if userType == "customer" {
+            TabView(selection: $selection) {
+                customerProfileViewTab
+                customerHomeViewTab
+                customerSettingsViewTab
+            }
+            .tint(.primary)
+        } else if userType == "seller" {
+            TabView(selection: $selection) {
+                sellerProfileViewTab
+                sellerHomeViewTab
+                sellerSettingsViewTab
+            }
         }
-        .tint(.primary)
-    }
-    
-    enum Tab: String {
-        case Profile = "Profile"
-        case Home = "Home"
-        case Settings = "Settings"
     }
 }
+
+
 
 #Preview {
     RootView()
 }
 
+
+
+enum Tab: String {
+    case Profile = "Profile"
+    case Home = "Home"
+    case Settings = "Settings"
+}
+
 extension RootView {
     
-    private var profileViewTab: some View {
-        ProfileView()
+    private var customerProfileViewTab: some View {
+        CustomerProfileView(showSignInView: $showSignInView)
             .tabItem {
                 Label {
                     Text("Profile")
@@ -45,8 +62,8 @@ extension RootView {
             .tag(Tab.Profile)
     }
     
-    private var homeViewTab: some View {
-        HomeView()
+    private var customerHomeViewTab: some View {
+        CustomerHomeView()
             .tabItem {
                 Label {
                     Text("Home")
@@ -57,8 +74,47 @@ extension RootView {
             .tag(Tab.Home)
     }
     
-    private var settingsViewTab: some View {
-        SettingsView()
+    private var customerSettingsViewTab: some View {
+        CustomerSettingsView()
+            .tabItem {
+                Label {
+                    Text("Settings")
+                } icon: {
+                    Image(systemName: "gearshape.fill")
+                }
+            }
+            .tag(Tab.Settings)
+    }
+    
+    
+    
+    
+    private var sellerProfileViewTab: some View {
+        SellerProfileView(showSignInView: $showSignInView)
+            .tabItem {
+                Label {
+                    Text("Profile")
+                } icon: {
+                    Image(systemName: "person.fill")
+                }
+            }
+            .tag(Tab.Profile)
+    }
+    
+    private var sellerHomeViewTab: some View {
+        SellerHomeView()
+            .tabItem {
+                Label {
+                    Text("Home")
+                } icon: {
+                    Image(systemName: "house.fill")
+                }
+            }
+            .tag(Tab.Home)
+    }
+    
+    private var sellerSettingsViewTab: some View {
+        SellerSettingsView()
             .tabItem {
                 Label {
                     Text("Settings")

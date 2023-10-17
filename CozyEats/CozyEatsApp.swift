@@ -7,6 +7,7 @@
 
 import SwiftUI
 import Firebase
+import FirebaseAnalytics
 
 @main
 struct CozyEatsApp: App {
@@ -15,7 +16,7 @@ struct CozyEatsApp: App {
     
     var body: some Scene {
         WindowGroup {
-            MainView()
+            RootView()
         }
     }
 }

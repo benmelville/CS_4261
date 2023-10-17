@@ -11,16 +11,32 @@
 		1D24CF6D2ACF73C600B0C848 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1D24CF6C2ACF73C600B0C848 /* Assets.xcassets */; };
 		1D24CF702ACF73C600B0C848 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1D24CF6F2ACF73C600B0C848 /* Preview Assets.xcassets */; };
 		1D8C7A932AD79FE100497E90 /* FiveStarsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D8C7A922AD79FE100497E90 /* FiveStarsView.swift */; };
-		1D9242A32AD490DA00BD8BD8 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D9242A22AD490DA00BD8BD8 /* MainView.swift */; };
-		1D9242A52AD5BDE800BD8BD8 /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D9242A42AD5BDE800BD8BD8 /* ProfileView.swift */; };
-		1D9242A72AD5BE6800BD8BD8 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D9242A62AD5BE6800BD8BD8 /* HomeView.swift */; };
-		1D9242A92AD5C8AF00BD8BD8 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D9242A82AD5C8AF00BD8BD8 /* SettingsView.swift */; };
+		1D9242A32AD490DA00BD8BD8 /* RootView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D9242A22AD490DA00BD8BD8 /* RootView.swift */; };
+		1D9242A52AD5BDE800BD8BD8 /* CustomerProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D9242A42AD5BDE800BD8BD8 /* CustomerProfileView.swift */; };
+		1D9242A72AD5BE6800BD8BD8 /* CustomerHomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D9242A62AD5BE6800BD8BD8 /* CustomerHomeView.swift */; };
+		1D9242A92AD5C8AF00BD8BD8 /* CustomerSettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D9242A82AD5C8AF00BD8BD8 /* CustomerSettingsView.swift */; };
 		1D9242AB2AD5D4C700BD8BD8 /* FoodPreviewView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D9242AA2AD5D4C700BD8BD8 /* FoodPreviewView.swift */; };
-		1D9242AD2AD5E2FD00BD8BD8 /* Profile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D9242AC2AD5E2FD00BD8BD8 /* Profile.swift */; };
+		1D9E25902ADC70C400E32C47 /* SignUpWithEmailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D9E258F2ADC70C400E32C47 /* SignUpWithEmailView.swift */; };
+		1D9E25932ADC823C00E32C47 /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = 1D9E25922ADC823C00E32C47 /* FirebaseAuth */; };
+		1D9E25952ADC94A200E32C47 /* CustomerManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D9E25942ADC94A200E32C47 /* CustomerManager.swift */; };
+		1D9E25972ADC95E400E32C47 /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = 1D9E25962ADC95E400E32C47 /* FirebaseFirestore */; };
+		1D9E25992ADC95E400E32C47 /* FirebaseFirestoreSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 1D9E25982ADC95E400E32C47 /* FirebaseFirestoreSwift */; };
+		1D9E259B2ADCC24B00E32C47 /* SellerManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D9E259A2ADCC24B00E32C47 /* SellerManager.swift */; };
+		1D9E25A02ADD9FF700E32C47 /* SellerProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D9E259F2ADD9FF700E32C47 /* SellerProfileView.swift */; };
+		1D9E25A22ADDA01D00E32C47 /* SellerHomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D9E25A12ADDA01D00E32C47 /* SellerHomeView.swift */; };
+		1D9E25A42ADDA09F00E32C47 /* SellerSettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D9E25A32ADDA09F00E32C47 /* SellerSettingsView.swift */; };
+		1D9E25A62ADDAE6800E32C47 /* AddMenuItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D9E25A52ADDAE6800E32C47 /* AddMenuItemView.swift */; };
+		1D9E25A82ADDE29800E32C47 /* MenuItemCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D9E25A72ADDE29800E32C47 /* MenuItemCardView.swift */; };
+		1D9E25C62ADE35D800E32C47 /* FirebaseStorage in Frameworks */ = {isa = PBXBuildFile; productRef = 1D9E25C52ADE35D800E32C47 /* FirebaseStorage */; };
+		1D9E25CA2ADE36CC00E32C47 /* StorageManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D9E25C92ADE36CC00E32C47 /* StorageManager.swift */; };
 		1DEC47502ADA416C00D1B455 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 1DEC474F2ADA416C00D1B455 /* GoogleService-Info.plist */; };
 		1DEC47532ADA422000D1B455 /* FirebaseAnalytics in Frameworks */ = {isa = PBXBuildFile; productRef = 1DEC47522ADA422000D1B455 /* FirebaseAnalytics */; };
 		1DEC47572ADA422000D1B455 /* FirebaseAnalyticsSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 1DEC47562ADA422000D1B455 /* FirebaseAnalyticsSwift */; };
-		1DEC475F2ADA422000D1B455 /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = 1DEC475E2ADA422000D1B455 /* FirebaseAuth */; };
+		1DEC478E2ADB7F9D00D1B455 /* AuthenticationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DEC478D2ADB7F9D00D1B455 /* AuthenticationView.swift */; };
+		1DEC47902ADB800D00D1B455 /* SignInWithEmailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DEC478F2ADB800D00D1B455 /* SignInWithEmailView.swift */; };
+		1DEC47932ADB892A00D1B455 /* SignInWithEmailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DEC47922ADB892A00D1B455 /* SignInWithEmailViewModel.swift */; };
+		1DEC47952ADBB0B200D1B455 /* AuthenticationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DEC47942ADBB0B200D1B455 /* AuthenticationManager.swift */; };
+		1DEC47982ADBB26300D1B455 /* AuthDataResultModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DEC47972ADBB26300D1B455 /* AuthDataResultModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -29,13 +45,26 @@
 		1D24CF6C2ACF73C600B0C848 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		1D24CF6F2ACF73C600B0C848 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		1D8C7A922AD79FE100497E90 /* FiveStarsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FiveStarsView.swift; sourceTree = "<group>"; };
-		1D9242A22AD490DA00BD8BD8 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
-		1D9242A42AD5BDE800BD8BD8 /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
-		1D9242A62AD5BE6800BD8BD8 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
-		1D9242A82AD5C8AF00BD8BD8 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
+		1D9242A22AD490DA00BD8BD8 /* RootView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootView.swift; sourceTree = "<group>"; };
+		1D9242A42AD5BDE800BD8BD8 /* CustomerProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomerProfileView.swift; sourceTree = "<group>"; };
+		1D9242A62AD5BE6800BD8BD8 /* CustomerHomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomerHomeView.swift; sourceTree = "<group>"; };
+		1D9242A82AD5C8AF00BD8BD8 /* CustomerSettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomerSettingsView.swift; sourceTree = "<group>"; };
 		1D9242AA2AD5D4C700BD8BD8 /* FoodPreviewView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodPreviewView.swift; sourceTree = "<group>"; };
-		1D9242AC2AD5E2FD00BD8BD8 /* Profile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Profile.swift; sourceTree = "<group>"; };
+		1D9E258F2ADC70C400E32C47 /* SignUpWithEmailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpWithEmailView.swift; sourceTree = "<group>"; };
+		1D9E25942ADC94A200E32C47 /* CustomerManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomerManager.swift; sourceTree = "<group>"; };
+		1D9E259A2ADCC24B00E32C47 /* SellerManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SellerManager.swift; sourceTree = "<group>"; };
+		1D9E259F2ADD9FF700E32C47 /* SellerProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SellerProfileView.swift; sourceTree = "<group>"; };
+		1D9E25A12ADDA01D00E32C47 /* SellerHomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SellerHomeView.swift; sourceTree = "<group>"; };
+		1D9E25A32ADDA09F00E32C47 /* SellerSettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SellerSettingsView.swift; sourceTree = "<group>"; };
+		1D9E25A52ADDAE6800E32C47 /* AddMenuItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddMenuItemView.swift; sourceTree = "<group>"; };
+		1D9E25A72ADDE29800E32C47 /* MenuItemCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuItemCardView.swift; sourceTree = "<group>"; };
+		1D9E25C92ADE36CC00E32C47 /* StorageManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorageManager.swift; sourceTree = "<group>"; };
 		1DEC474F2ADA416C00D1B455 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		1DEC478D2ADB7F9D00D1B455 /* AuthenticationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationView.swift; sourceTree = "<group>"; };
+		1DEC478F2ADB800D00D1B455 /* SignInWithEmailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInWithEmailView.swift; sourceTree = "<group>"; };
+		1DEC47922ADB892A00D1B455 /* SignInWithEmailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInWithEmailViewModel.swift; sourceTree = "<group>"; };
+		1DEC47942ADBB0B200D1B455 /* AuthenticationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationManager.swift; sourceTree = "<group>"; };
+		1DEC47972ADBB26300D1B455 /* AuthDataResultModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthDataResultModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -43,9 +72,12 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1D9E25992ADC95E400E32C47 /* FirebaseFirestoreSwift in Frameworks */,
 				1DEC47572ADA422000D1B455 /* FirebaseAnalyticsSwift in Frameworks */,
+				1D9E25972ADC95E400E32C47 /* FirebaseFirestore in Frameworks */,
+				1D9E25932ADC823C00E32C47 /* FirebaseAuth in Frameworks */,
 				1DEC47532ADA422000D1B455 /* FirebaseAnalytics in Frameworks */,
-				1DEC475F2ADA422000D1B455 /* FirebaseAuth in Frameworks */,
+				1D9E25C62ADE35D800E32C47 /* FirebaseStorage in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -57,6 +89,7 @@
 			children = (
 				1D24CF672ACF73C400B0C848 /* CozyEats */,
 				1D24CF662ACF73C400B0C848 /* Products */,
+				1D9E25912ADC823C00E32C47 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -71,12 +104,14 @@
 		1D24CF672ACF73C400B0C848 /* CozyEats */ = {
 			isa = PBXGroup;
 			children = (
-				1DEC474F2ADA416C00D1B455 /* GoogleService-Info.plist */,
-				1D9242A12AD48F3800BD8BD8 /* Models */,
-				1D9242A02AD48F2500BD8BD8 /* ViewModels */,
-				1D92429F2AD48F1A00BD8BD8 /* Views */,
 				1D24CF682ACF73C400B0C848 /* CozyEatsApp.swift */,
+				1D9E259E2ADCCF1D00E32C47 /* Firebase */,
+				1D9E259D2ADCCED500E32C47 /* Seller */,
+				1D9E259C2ADCCE5600E32C47 /* Customer */,
+				1DEC478B2ADB7F6700D1B455 /* Authentication */,
+				1D92429F2AD48F1A00BD8BD8 /* Views */,
 				1D24CF6C2ACF73C600B0C848 /* Assets.xcassets */,
+				1DEC474F2ADA416C00D1B455 /* GoogleService-Info.plist */,
 				1D24CF6E2ACF73C600B0C848 /* Preview Content */,
 			);
 			path = CozyEats;
@@ -93,27 +128,85 @@
 		1D92429F2AD48F1A00BD8BD8 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				1D9242A22AD490DA00BD8BD8 /* MainView.swift */,
-				1D9242A42AD5BDE800BD8BD8 /* ProfileView.swift */,
-				1D9242A62AD5BE6800BD8BD8 /* HomeView.swift */,
-				1D9242A82AD5C8AF00BD8BD8 /* SettingsView.swift */,
-				1D9242AA2AD5D4C700BD8BD8 /* FoodPreviewView.swift */,
+				1D9242A22AD490DA00BD8BD8 /* RootView.swift */,
 				1D8C7A922AD79FE100497E90 /* FiveStarsView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
 		};
-		1D9242A02AD48F2500BD8BD8 /* ViewModels */ = {
+		1D9E25912ADC823C00E32C47 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		1D9E259C2ADCCE5600E32C47 /* Customer */ = {
+			isa = PBXGroup;
+			children = (
+				1D9242A42AD5BDE800BD8BD8 /* CustomerProfileView.swift */,
+				1D9242A62AD5BE6800BD8BD8 /* CustomerHomeView.swift */,
+				1D9242A82AD5C8AF00BD8BD8 /* CustomerSettingsView.swift */,
+				1D9242AA2AD5D4C700BD8BD8 /* FoodPreviewView.swift */,
+			);
+			path = Customer;
+			sourceTree = "<group>";
+		};
+		1D9E259D2ADCCED500E32C47 /* Seller */ = {
+			isa = PBXGroup;
+			children = (
+				1D9E259F2ADD9FF700E32C47 /* SellerProfileView.swift */,
+				1D9E25A32ADDA09F00E32C47 /* SellerSettingsView.swift */,
+				1D9E25A12ADDA01D00E32C47 /* SellerHomeView.swift */,
+				1D9E25A72ADDE29800E32C47 /* MenuItemCardView.swift */,
+				1D9E25A52ADDAE6800E32C47 /* AddMenuItemView.swift */,
+			);
+			path = Seller;
+			sourceTree = "<group>";
+		};
+		1D9E259E2ADCCF1D00E32C47 /* Firebase */ = {
+			isa = PBXGroup;
+			children = (
+				1DEC47942ADBB0B200D1B455 /* AuthenticationManager.swift */,
+				1D9E25942ADC94A200E32C47 /* CustomerManager.swift */,
+				1D9E259A2ADCC24B00E32C47 /* SellerManager.swift */,
+				1D9E25C92ADE36CC00E32C47 /* StorageManager.swift */,
+			);
+			path = Firebase;
+			sourceTree = "<group>";
+		};
+		1DEC478B2ADB7F6700D1B455 /* Authentication */ = {
+			isa = PBXGroup;
+			children = (
+				1DEC47962ADBB23E00D1B455 /* Models */,
+				1DEC478C2ADB7F8700D1B455 /* Views */,
+				1DEC47912ADB803300D1B455 /* ViewModels */,
+			);
+			path = Authentication;
+			sourceTree = "<group>";
+		};
+		1DEC478C2ADB7F8700D1B455 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				1DEC478D2ADB7F9D00D1B455 /* AuthenticationView.swift */,
+				1DEC478F2ADB800D00D1B455 /* SignInWithEmailView.swift */,
+				1D9E258F2ADC70C400E32C47 /* SignUpWithEmailView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		1DEC47912ADB803300D1B455 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				1DEC47922ADB892A00D1B455 /* SignInWithEmailViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
 		};
-		1D9242A12AD48F3800BD8BD8 /* Models */ = {
+		1DEC47962ADBB23E00D1B455 /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				1D9242AC2AD5E2FD00BD8BD8 /* Profile.swift */,
+				1DEC47972ADBB26300D1B455 /* AuthDataResultModel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -137,7 +230,10 @@
 			packageProductDependencies = (
 				1DEC47522ADA422000D1B455 /* FirebaseAnalytics */,
 				1DEC47562ADA422000D1B455 /* FirebaseAnalyticsSwift */,
-				1DEC475E2ADA422000D1B455 /* FirebaseAuth */,
+				1D9E25922ADC823C00E32C47 /* FirebaseAuth */,
+				1D9E25962ADC95E400E32C47 /* FirebaseFirestore */,
+				1D9E25982ADC95E400E32C47 /* FirebaseFirestoreSwift */,
+				1D9E25C52ADE35D800E32C47 /* FirebaseStorage */,
 			);
 			productName = CozyEats;
 			productReference = 1D24CF652ACF73C400B0C848 /* CozyEats.app */;
@@ -197,13 +293,26 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1D9E25A62ADDAE6800E32C47 /* AddMenuItemView.swift in Sources */,
 				1D8C7A932AD79FE100497E90 /* FiveStarsView.swift in Sources */,
-				1D9242A92AD5C8AF00BD8BD8 /* SettingsView.swift in Sources */,
+				1D9E259B2ADCC24B00E32C47 /* SellerManager.swift in Sources */,
+				1D9E25CA2ADE36CC00E32C47 /* StorageManager.swift in Sources */,
+				1D9242A92AD5C8AF00BD8BD8 /* CustomerSettingsView.swift in Sources */,
 				1D24CF692ACF73C400B0C848 /* CozyEatsApp.swift in Sources */,
-				1D9242A72AD5BE6800BD8BD8 /* HomeView.swift in Sources */,
-				1D9242AD2AD5E2FD00BD8BD8 /* Profile.swift in Sources */,
-				1D9242A52AD5BDE800BD8BD8 /* ProfileView.swift in Sources */,
-				1D9242A32AD490DA00BD8BD8 /* MainView.swift in Sources */,
+				1D9E25952ADC94A200E32C47 /* CustomerManager.swift in Sources */,
+				1D9E25A82ADDE29800E32C47 /* MenuItemCardView.swift in Sources */,
+				1D9E25A02ADD9FF700E32C47 /* SellerProfileView.swift in Sources */,
+				1D9E25A22ADDA01D00E32C47 /* SellerHomeView.swift in Sources */,
+				1DEC47982ADBB26300D1B455 /* AuthDataResultModel.swift in Sources */,
+				1DEC47902ADB800D00D1B455 /* SignInWithEmailView.swift in Sources */,
+				1D9242A72AD5BE6800BD8BD8 /* CustomerHomeView.swift in Sources */,
+				1D9E25902ADC70C400E32C47 /* SignUpWithEmailView.swift in Sources */,
+				1DEC478E2ADB7F9D00D1B455 /* AuthenticationView.swift in Sources */,
+				1D9242A52AD5BDE800BD8BD8 /* CustomerProfileView.swift in Sources */,
+				1DEC47932ADB892A00D1B455 /* SignInWithEmailViewModel.swift in Sources */,
+				1DEC47952ADBB0B200D1B455 /* AuthenticationManager.swift in Sources */,
+				1D9242A32AD490DA00BD8BD8 /* RootView.swift in Sources */,
+				1D9E25A42ADDA09F00E32C47 /* SellerSettingsView.swift in Sources */,
 				1D9242AB2AD5D4C700BD8BD8 /* FoodPreviewView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -423,6 +532,26 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		1D9E25922ADC823C00E32C47 /* FirebaseAuth */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 1DEC47512ADA422000D1B455 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseAuth;
+		};
+		1D9E25962ADC95E400E32C47 /* FirebaseFirestore */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 1DEC47512ADA422000D1B455 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseFirestore;
+		};
+		1D9E25982ADC95E400E32C47 /* FirebaseFirestoreSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 1DEC47512ADA422000D1B455 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseFirestoreSwift;
+		};
+		1D9E25C52ADE35D800E32C47 /* FirebaseStorage */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 1DEC47512ADA422000D1B455 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseStorage;
+		};
 		1DEC47522ADA422000D1B455 /* FirebaseAnalytics */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 1DEC47512ADA422000D1B455 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
@@ -432,11 +561,6 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 1DEC47512ADA422000D1B455 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
 			productName = FirebaseAnalyticsSwift;
-		};
-		1DEC475E2ADA422000D1B455 /* FirebaseAuth */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 1DEC47512ADA422000D1B455 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
-			productName = FirebaseAuth;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct HomeView: View {
+struct CustomerHomeView: View {
     
     @State var searchText: String = ""
     
@@ -60,23 +60,23 @@ struct HomeView: View {
                         Divider().frame(height: 30)
                     }
                 }
-            }
-            .navigationTitle("Cozy Eats")
-            .searchable(text: $searchText)
-            .toolbar {
-                ToolbarItem(placement: .topBarLeading) {
-                    Image(systemName: "line.3.horizontal.decrease.circle")
-                        .resizable()
-                        .scaledToFit()
-                        .frame(width: 30, height: 30)
+                .navigationTitle("Cozy Eats")
+                .searchable(text: $searchText)
+                .toolbar {
+                    ToolbarItem(placement: .topBarLeading) {
+                        Image(systemName: "line.3.horizontal.decrease.circle")
+                            .resizable()
+                            .scaledToFit()
+                            .frame(width: 30, height: 30)
+                    }
                 }
+                .toolbarBackground(.visible, for: .navigationBar)
+                .toolbarBackground(Color.accentColor, for: .navigationBar)
             }
-            .toolbar(.visible, for: .navigationBar)
-        .toolbarBackground(Color.accentColor, for: .navigationBar)
         }
     }
 }
 
 #Preview {
-    HomeView()
+    CustomerHomeView()
 }
