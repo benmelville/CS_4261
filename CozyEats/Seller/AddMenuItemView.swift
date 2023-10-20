@@ -29,30 +29,41 @@ final class AddMenuItemViewModel: ObservableObject {
     
     func addMenuItem(name: String, price: Int, description: String, cuisine: String) {
         guard let user else { return }
-        let menuItem = MenuItem(name: name, price: price, description: description, cuisine: cuisine)
+
         
         Task {
+            let images = try await addMenuImages(menuItemName: name)
+            print(images)
+            let menuItem = MenuItem(name: name, price: price, description: description, cuisine: cuisine, images: images)
+            print(menuItem)
             try await SellerManager.shared.addMenuItem(userId: user.userId, menuItem: menuItem)
             self.user = try await SellerManager.shared.getSeller(userId: user.userId)
         }
+        
+        
+        
     }
     
     
-    func addMenuImages(menuItemName: String) {
+    func addMenuImages(menuItemName: String) async throws -> [String] {
         
-        guard let user else { return }
+        guard let user else { return ["no user"]}
         
-        Task {
-            do {
-                for image in selectedImages {
-                    if let data = image.pngData() {
-                        try await StorageManager.shared.saveImage(userId: user.userId, menuItemName: menuItemName, data: data)
-                    }
+        do {
+            var imageUrls: [String] = []
+            for image in selectedImages {
+                if let data = image.jpegData(compressionQuality: 0.25) {
+                    let imageUrl = try await StorageManager.shared.saveImage(userId: user.userId, menuItemName: menuItemName, data: data)
+                    imageUrls.append(imageUrl)
+                    print(imageUrl)
                 }
-                
-            } catch {
-                print(error)
             }
+            print(imageUrls)
+            return imageUrls
+            
+        } catch {
+            print(error)
+            return ["catch"]
         }
     }
     
@@ -107,8 +118,6 @@ struct AddMenuItemView: View {
                     TextField("description...", text: $description)
                     TextField("cuisine...", text: $cuisine)
                     
-                    
-                    
                 }
                 .font(.headline)
                 .padding(.leading)
@@ -143,8 +152,9 @@ struct AddMenuItemView: View {
                 
                 
                 Button {
-                    viewModel.addMenuItem(name: name, price: price, description: description, cuisine: cuisine)
-                    viewModel.addMenuImages(menuItemName: name)
+                    Task {
+                        viewModel.addMenuItem(name: name, price: price, description: description, cuisine: cuisine)
+                    }
                     withAnimation {
                         dismiss()
                     }

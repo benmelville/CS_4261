@@ -14,16 +14,16 @@ import FirebaseFirestoreSwift
 struct MenuItem: Codable, Identifiable {
     let id: String = UUID().uuidString
     let name: String
-    let images: [String]?
+    let images: [String]
     let price: Int?
     let dietaryRestrictions: [String]?
     let description: String?
     let cuisine: String?
     
     
-    init(name: String, price: Int, description: String, cuisine: String) {
+    init(name: String, price: Int, description: String, cuisine: String, images: [String]) {
         self.name = name
-        self.images = []
+        self.images = images
         self.price = price
         self.dietaryRestrictions = []
         self.description = description
@@ -43,7 +43,7 @@ struct MenuItem: Codable, Identifiable {
     init(from decoder: Decoder) throws {
         let container = try decoder.container(keyedBy: CodingKeys.self)
         self.name = try container.decode(String.self, forKey: .name)
-        self.images = try container.decodeIfPresent([String].self, forKey: .images)
+        self.images = try container.decode([String].self, forKey: .images)
         self.price = try container.decodeIfPresent(Int.self, forKey: .price)
         self.dietaryRestrictions = try container.decodeIfPresent([String].self, forKey: .dietaryRestrictions)
         self.description = try container.decodeIfPresent(String.self, forKey: .description)
