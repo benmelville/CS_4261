@@ -213,9 +213,24 @@ Distributed under the MIT License. See `LICENSE.txt` for more information.
 <!-- CONTACT -->
 ## Contact
 
-Your Name - [@your_twitter](https://twitter.com/your_username) - email@example.com
 
-Project Link: [https://github.com/your_username/repo_name](https://github.com/your_username/repo_name)
+Jackie Chen
+* GT username: jchen3014
+* Email: jchen3014@gatech.edu
+
+Johnny Sanchez-Lopez
+* GT username: jsanchezlopez3
+* Email: jsanchezlopez3@gatech.edu
+
+Rohan Bodla
+* GT username: rbodla3
+* Email: rbodla3@gatech.edu
+
+Benjamin Melville
+* GT username: bmelville8
+* Email: bmelville8@gatech.edu
+
+Project Link: https://github.com/benmelville/CozyEats
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
