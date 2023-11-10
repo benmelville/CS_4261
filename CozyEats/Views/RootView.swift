@@ -21,9 +21,9 @@ struct RootView: View {
             TabView(selection: $selection) {
                 customerProfileViewTab
                 customerHomeViewTab
-                customerSettingsViewTab
+                customerMapViewTab
             }
-            .tint(.primary)
+//            .tint(.primary)
         } else if userType == "seller" {
             TabView(selection: $selection) {
                 sellerProfileViewTab
@@ -74,13 +74,13 @@ extension RootView {
             .tag(Tab.Home)
     }
     
-    private var customerSettingsViewTab: some View {
-        CustomerSettingsView()
+    private var customerMapViewTab: some View {
+        CustomerMapView()
             .tabItem {
                 Label {
-                    Text("Settings")
+                    Text("Map")
                 } icon: {
-                    Image(systemName: "gearshape.fill")
+                    Image(systemName: "map")
                 }
             }
             .tag(Tab.Settings)

@@ -35,7 +35,7 @@ struct SellerHomeView: View {
                             ForEach(menu) { menuItem in
                                 MenuItemCardView(menu: menuItem)
                                 Divider()
-                            }
+                }
                         }
                     }
                 }

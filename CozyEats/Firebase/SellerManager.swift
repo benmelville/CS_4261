@@ -11,7 +11,7 @@ import FirebaseFirestoreSwift
 
 
 
-struct MenuItem: Codable, Identifiable {
+struct MenuItem: Codable, Identifiable, Hashable {
     let id: String = UUID().uuidString
     let name: String
     let images: [String]
@@ -63,7 +63,7 @@ struct MenuItem: Codable, Identifiable {
     
 }
 
-struct Seller: Codable {
+struct Seller: Codable, Hashable {
     let firstName: String?
     let lastName: String?
     let userId: String
@@ -180,6 +180,19 @@ final class SellerManager {
         
         try await sellerDocument(userId: userId).updateData(dict)
         
+    }
+    
+    func getAllSellers() async throws -> [Seller] {
+        let snapshot = try await sellerCollection.getDocuments()
+        
+        var sellers: [Seller] = []
+        
+        for document in snapshot.documents {
+            let seller = try document.data(as: Seller.self)
+            sellers.append(seller)
+        }
+        
+        return sellers
     }
     
 }

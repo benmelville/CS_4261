@@ -78,7 +78,7 @@ struct CustomerHomeView: View {
                     .font(.headline)
                     
                     Divider()
-                        .frame(height: 4)
+                        .frame(height: 0.5)
                         .overlay(.accent)
                         .padding()
                     
@@ -86,7 +86,7 @@ struct CustomerHomeView: View {
                         
                         ForEach(sellers, id: \.self) { seller in
                             
-                            FoodPreviewView(seller: seller)
+                            FeedCellView(seller: seller)
 
                         }
                     }
