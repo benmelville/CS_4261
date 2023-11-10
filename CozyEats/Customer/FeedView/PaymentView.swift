@@ -163,9 +163,8 @@ struct PaywallDemoPaymentView: View {
 }
 
 
-struct CustomerPaymentView_Previews: PreviewProvider {
-    static var previews: some View {
-        PaywallDemoPaymentView()
-    }
+
+#Preview {
+    PaywallDemoPaymentView()
 }
 
