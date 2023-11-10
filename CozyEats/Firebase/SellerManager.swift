@@ -19,6 +19,7 @@ struct MenuItem: Codable, Identifiable, Hashable {
     let dietaryRestrictions: [String]?
     let description: String?
     let cuisine: String?
+    var quantity: Int?
     
     
     init(name: String, price: Int, description: String, cuisine: String, images: [String]) {
@@ -28,6 +29,7 @@ struct MenuItem: Codable, Identifiable, Hashable {
         self.dietaryRestrictions = []
         self.description = description
         self.cuisine = cuisine
+        self.quantity = nil
     }
     
     
@@ -38,6 +40,7 @@ struct MenuItem: Codable, Identifiable, Hashable {
         case dietaryRestrictions
         case description
         case cuisine
+        case quantity
     }
     
     init(from decoder: Decoder) throws {
@@ -48,6 +51,7 @@ struct MenuItem: Codable, Identifiable, Hashable {
         self.dietaryRestrictions = try container.decodeIfPresent([String].self, forKey: .dietaryRestrictions)
         self.description = try container.decodeIfPresent(String.self, forKey: .description)
         self.cuisine = try container.decodeIfPresent(String.self, forKey: .cuisine)
+        self.quantity = try container.decodeIfPresent(Int.self, forKey: .quantity)
     }
     
     func encode(to encoder: Encoder) throws {
@@ -58,6 +62,7 @@ struct MenuItem: Codable, Identifiable, Hashable {
         try container.encodeIfPresent(self.dietaryRestrictions, forKey: .dietaryRestrictions)
         try container.encodeIfPresent(self.description, forKey: .description)
         try container.encodeIfPresent(self.cuisine, forKey: .cuisine)
+        try container.encodeIfPresent(self.quantity, forKey: .quantity)
     }
     
     

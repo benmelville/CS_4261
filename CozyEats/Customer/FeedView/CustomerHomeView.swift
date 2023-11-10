@@ -48,28 +48,28 @@ struct CustomerHomeView: View {
                     HStack(spacing: 25.0) {
                         VStack {
                             Text("🍔")
-                                .font(.largeTitle)
+                                .font(.system(.largeTitle, design: .serif))
                             Text("American")
                         }
                         .frame(width: 80, height: 80)
                         
                         VStack {
                             Text("🍝")
-                                .font(.largeTitle)
+                                .font(.system(.largeTitle, design: .serif))
                             Text("Italian")
                         }
                         .frame(width: 80, height: 80)
                         
                         VStack {
                             Text("🥡")
-                                .font(.largeTitle)
+                                .font(.system(.largeTitle, design: .serif))
                             Text("Chinese")
                         }
                         .frame(width: 80, height: 80)
                         
                         VStack {
                             Text("🌮")
-                                .font(.largeTitle)
+                                .font(.system(.largeTitle, design: .serif))
                             Text("Mexican")
                         }
                         .frame(width: 80, height: 80)
@@ -100,6 +100,33 @@ struct CustomerHomeView: View {
                             .scaledToFit()
                             .frame(width: 30, height: 30)
                     }
+                    
+                    ToolbarItem(placement: .topBarTrailing) {
+                        NavigationLink {
+                            ShoppingCartView()
+                        } label: {
+                            Image(systemName: "cart")
+                                .resizable()
+                                .scaledToFit()
+                                .frame(width: 30, height: 30)
+                                .foregroundStyle(.black)
+                                .overlay(alignment: .topTrailing) {
+                                    
+                                    if let user = viewModel.user, let cart = user.cart {
+                                        Image(systemName: "circle.fill")
+                                            .frame(width: 8, height: 8)
+                                            .foregroundStyle(.red)
+                                            .overlay(
+                                                Text("\(cart.count)")
+                                                    .foregroundStyle(.white)
+                                            )
+                                    }
+                                }
+
+                        }
+
+                    }
+                    
                 }
                 .toolbarBackground(.visible, for: .navigationBar)
                 .toolbarBackground(Color.accentColor, for: .navigationBar)
@@ -107,6 +134,7 @@ struct CustomerHomeView: View {
         }
         .task {
             try? await viewModel.getAllSellers()
+            try? await viewModel.loadCurrentUser()
         }
     }
 }

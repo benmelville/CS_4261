@@ -15,6 +15,9 @@ final class FeedCellViewModel: ObservableObject {
         let data = try await StorageManager.shared.getImage(imageUrl: imageUrl)
         self.image = UIImage(data: data)
     }
+    
+    
+    
 }
 
 
@@ -86,8 +89,8 @@ struct FeedCellView: View {
                                 .padding(.leading)
                             }
                             .sheet(isPresented: $showSheet) {
-                                if let menu = seller.menu, let menuItem = menu.first {
-                                    OrderView(menuItem: menuItem, seller: seller)
+                                if let menu = seller.menu {
+                                    OrderView(menuItem: menu.first!, seller: seller)
                                 }
                             }
 
@@ -97,8 +100,12 @@ struct FeedCellView: View {
                     
                     
                 } else {
-                    Text("NO IMAGE")
+                    
+                    ProgressView()
                         .frame(width: 400, height: 400)
+
+//                    Text("NO IMAGE")
+//                        .frame(width: 400, height: 400)
                 }
                 //            Image("\(seller.menu?.first?.images.first ?? "lasagna")")
                 //                .resizable()

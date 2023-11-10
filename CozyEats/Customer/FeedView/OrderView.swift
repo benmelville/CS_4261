@@ -10,23 +10,46 @@ import SwiftUI
 @MainActor
 final class OrderViewModel: ObservableObject {
     @Published private(set) var image: UIImage? = nil
+    @Published private(set) var user: Customer? = nil
+    
     
     func loadMenuImage(imageUrl: String) async throws {
         let data = try await StorageManager.shared.getImage(imageUrl: imageUrl)
         self.image = UIImage(data: data)
     }
+    
+    func loadCurrentUser() async throws {
+        let authDataResult = try AuthenticationManager.shared.getAuthenticatedUser()
+        self.user = try await CustomerManager.shared.getCustomer(userId: authDataResult.uid)
+    }
+    
+    func addToCart(menuItem: MenuItem, quantity: Int) {
+        
+        guard let user else { return }
+        
+        
+
+        Task {
+            try await CustomerManager.shared.addToCart(userId: user.userId, menuItem: menuItem, quantity: quantity)
+            self.user = try await CustomerManager.shared.getCustomer(userId: user.userId)
+        }
+    }
+    
 }
+
 
 
 
 struct OrderView: View {
     
-    let menuItem: MenuItem
+    @State var menuItem: MenuItem
     let seller: Seller
     
     @StateObject private var viewModel = OrderViewModel()
-    @State var stepperValue: Int = 0
+    @Environment(\.dismiss) var dismissScreen
+    @State var quantity: Int = 0
     @State private var animate = false
+    
 
     
     var body: some View {
@@ -75,7 +98,6 @@ struct OrderView: View {
                                     .clipShape(RoundedRectangle(cornerRadius: 12))
                                     .padding(.bottom)
                                     .padding(.horizontal)
-
                             }
                     }
                     
@@ -117,7 +139,7 @@ struct OrderView: View {
                         .padding(.bottom, 20)
 
                     
-                    Stepper("\(stepperValue)", value: $stepperValue)
+                    Stepper("\(quantity)", value: $quantity)
                         .frame(maxWidth: .infinity)
                         .padding(.horizontal, 90)
                     
@@ -129,7 +151,7 @@ struct OrderView: View {
                     Divider()
                         .background(.secondary)
                     
-                    Text("total: $\(stepperValue * (menuItem.price ?? 1))")
+                    Text("total: $\(quantity * (menuItem.price ?? 1))")
                         .font(.system(.title, design: .serif))
                         .fontWeight(.semibold)
                         .padding(.bottom, 25)
@@ -142,12 +164,16 @@ struct OrderView: View {
                     
                     
                     
-                    
-                    
                     Button {
-                        //TODO: order da foooood
+                        
+                        if let user = viewModel.user {
+                            menuItem.quantity = quantity
+                            viewModel.addToCart(menuItem: menuItem, quantity: quantity)
+                        }
+                        dismissScreen()
+                        
                     } label: {
-                        Text("place order")
+                        Text("add to cart")
                             .font(.system(.title2, design: .serif))
                             .fontWeight(.semibold)
                             .frame(maxWidth: .infinity)
@@ -179,6 +205,7 @@ struct OrderView: View {
             }
             .task {
                 try? await viewModel.loadMenuImage(imageUrl: menuItem.images.first ?? "")
+                try? await viewModel.loadCurrentUser()
             }
 
         }
