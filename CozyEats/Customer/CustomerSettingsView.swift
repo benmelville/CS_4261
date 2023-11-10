@@ -12,7 +12,8 @@ struct CustomerSettingsView: View {
     @State private var newUsername = ""
     @State private var newPassword = ""
     @State private var newEmail = ""
-
+    @State private var userFeedback = ""
+    
     var body: some View {
         VStack {
             Text("Customer Settings")
@@ -34,6 +35,18 @@ struct CustomerSettingsView: View {
                 .padding(.top, 10)
             SecureField("Enter new password", text: $newPassword)
                 .textFieldStyle(RoundedBorderTextFieldStyle())
+
+            Spacer()
+            Divider()
+
+            // Section for User Feedback
+            VStack(alignment: .leading, spacing: 10) {
+                Text("Add Any Comments/Suggestions Below:")
+                    .bold()  // Make the text bold
+                    .padding(.top, 10)
+                TextField("Enter your feedback", text: $userFeedback)
+                    .textFieldStyle(RoundedBorderTextFieldStyle())
+            }
 
             Spacer()
         }

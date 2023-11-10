@@ -1,11 +1,17 @@
 import SwiftUI
 
+class OrderCounter: ObservableObject {
+    @Published var ordersMade: Int = 0
+}
+
 struct PaywallDemoPaymentView: View {
     @State private var nameOnCard = ""
     @State private var cardNumber = ""
     @State private var securityCode = ""
     @State private var expirationMonth = ""
     @State private var expirationYear = ""
+    @State private var isOrderConfirmed = false
+    @ObservedObject private var orderCounter = OrderCounter()
 
     var body: some View {
         VStack(alignment: .leading, spacing: 20) {
@@ -129,10 +135,27 @@ struct PaywallDemoPaymentView: View {
                     }
                     .frame(width: 50)
             }
-
-
-
             Spacer()
+            HStack {
+                                Spacer()
+                                Button(action: {
+                                    isOrderConfirmed = true
+                                    orderCounter.ordersMade += 1
+                                }) {
+                                    Text("Confirm Order")
+                                        .foregroundColor(.white)
+                                        .padding()
+                                        .background(Color.green)
+                                        .cornerRadius(10)
+                                        .font(.headline)
+                                }
+                                Spacer()
+                            }
+                            .fullScreenCover(isPresented: $isOrderConfirmed) {
+                                Text("Order Confirmed!")
+                                
+                            }
+                            Spacer()
         }
         .padding(20)
         .navigationBarTitle("Payment", displayMode: .inline)
