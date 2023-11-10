@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct CustomerSettingsView: View {
+struct CustomerMapView: View {
     var body: some View {
         NavigationStack {
             ZStack {
@@ -23,5 +23,5 @@ struct CustomerSettingsView: View {
 }
 
 #Preview {
-    CustomerSettingsView()
+    CustomerMapView()
 }

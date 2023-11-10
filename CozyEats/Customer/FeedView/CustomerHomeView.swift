@@ -7,7 +7,34 @@
 
 import SwiftUI
 
+
+@MainActor
+final class CustomerViewModel: ObservableObject {
+    
+    
+    @Published private(set) var user: Customer? = nil
+    @Published var sellers: [Seller]? = nil
+    
+    func loadCurrentUser() async throws {
+        let authDataResult = try AuthenticationManager.shared.getAuthenticatedUser()
+        
+        self.user = try await CustomerManager.shared.getCustomer(userId: authDataResult.uid)
+    }
+    
+    //TODO: function to fetch all of the seller user data
+    func getAllSellers() async throws {
+        let sellers: [Seller] = try await SellerManager.shared.getAllSellers()
+        self.sellers = sellers
+    }
+    
+}
+
+
+
+
 struct CustomerHomeView: View {
+    
+    @StateObject private var viewModel = CustomerViewModel()
     
     @State var searchText: String = ""
     
@@ -55,9 +82,13 @@ struct CustomerHomeView: View {
                         .overlay(.accent)
                         .padding()
                     
-                    ForEach(1..<10) { i in
-                        FoodPreviewView()
-                        Divider().frame(height: 30)
+                    if let sellers = viewModel.sellers {
+                        
+                        ForEach(sellers, id: \.self) { seller in
+                            
+                            FoodPreviewView(seller: seller)
+
+                        }
                     }
                 }
                 .navigationTitle("Cozy Eats")
@@ -73,6 +104,9 @@ struct CustomerHomeView: View {
                 .toolbarBackground(.visible, for: .navigationBar)
                 .toolbarBackground(Color.accentColor, for: .navigationBar)
             }
+        }
+        .task {
+            try? await viewModel.getAllSellers()
         }
     }
 }
