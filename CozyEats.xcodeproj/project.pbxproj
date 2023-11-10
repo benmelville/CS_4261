@@ -40,6 +40,8 @@
 		1DEC47932ADB892A00D1B455 /* SignInWithEmailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DEC47922ADB892A00D1B455 /* SignInWithEmailViewModel.swift */; };
 		1DEC47952ADBB0B200D1B455 /* AuthenticationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DEC47942ADBB0B200D1B455 /* AuthenticationManager.swift */; };
 		1DEC47982ADBB26300D1B455 /* AuthDataResultModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DEC47972ADBB26300D1B455 /* AuthDataResultModel.swift */; };
+		913AD3A52AFE9D9D004775B5 /* PaymentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 913AD3A42AFE9D9D004775B5 /* PaymentView.swift */; };
+		913AD3A72AFEA005004775B5 /* CustomerSettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 913AD3A62AFEA005004775B5 /* CustomerSettingsView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -71,6 +73,8 @@
 		1DEC47922ADB892A00D1B455 /* SignInWithEmailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInWithEmailViewModel.swift; sourceTree = "<group>"; };
 		1DEC47942ADBB0B200D1B455 /* AuthenticationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationManager.swift; sourceTree = "<group>"; };
 		1DEC47972ADBB26300D1B455 /* AuthDataResultModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthDataResultModel.swift; sourceTree = "<group>"; };
+		913AD3A42AFE9D9D004775B5 /* PaymentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentView.swift; sourceTree = "<group>"; };
+		913AD3A62AFEA005004775B5 /* CustomerSettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomerSettingsView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -152,6 +156,7 @@
 			children = (
 				1DDFF0232AFDC28800CDEE22 /* FeedView */,
 				1D9242A42AD5BDE800BD8BD8 /* CustomerProfileView.swift */,
+				913AD3A62AFEA005004775B5 /* CustomerSettingsView.swift */,
 				1D9242A82AD5C8AF00BD8BD8 /* CustomerMapView.swift */,
 			);
 			path = Customer;
@@ -186,6 +191,7 @@
 				1D9242A62AD5BE6800BD8BD8 /* CustomerHomeView.swift */,
 				1D9242AA2AD5D4C700BD8BD8 /* FeedCellView.swift */,
 				1DDFF0282AFDEDDE00CDEE22 /* OrderView.swift */,
+				913AD3A42AFE9D9D004775B5 /* PaymentView.swift */,
 				1DDFF0242AFDC2A900CDEE22 /* FeedCellActionBar.swift */,
 				1DDFF0262AFDC30100CDEE22 /* FeedCellHeaderView.swift */,
 			);
@@ -333,7 +339,9 @@
 				1DEC47952ADBB0B200D1B455 /* AuthenticationManager.swift in Sources */,
 				1D9242A32AD490DA00BD8BD8 /* RootView.swift in Sources */,
 				1D9E25A42ADDA09F00E32C47 /* SellerSettingsView.swift in Sources */,
+				913AD3A52AFE9D9D004775B5 /* PaymentView.swift in Sources */,
 				1D9242AB2AD5D4C700BD8BD8 /* FeedCellView.swift in Sources */,
+				913AD3A72AFEA005004775B5 /* CustomerSettingsView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
