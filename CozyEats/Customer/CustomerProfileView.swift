@@ -42,6 +42,9 @@ struct CustomerProfileView: View {
                         Text("\(user.dateCreated?.description ?? "")")
                         Text("\(user.email ?? "")")
                     }
+                    .font(.system(.headline, design: .serif))
+                    .fontWeight(.regular)
+
                     Section {
                         Button {
                             Task {
@@ -60,11 +63,17 @@ struct CustomerProfileView: View {
                                 .foregroundStyle(Color.red)
                         }
                     }
+                    CustomerSettingsView()
+                        .listRowBackground(Color.tan)
+
                 }
                 .scrollContentBackground(.hidden)
-                .listRowBackground(Color.red)
                 .background(Color.tan)
                 .navigationTitle("\(user.firstName ?? "")'s Profile")
+                
+                
+                
+                
             }
             
         }

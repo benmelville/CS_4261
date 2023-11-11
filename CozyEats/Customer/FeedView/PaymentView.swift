@@ -4,7 +4,7 @@ class OrderCounter: ObservableObject {
     @Published var ordersMade: Int = 0
 }
 
-struct PaywallDemoPaymentView: View {
+struct PaymentView: View {
     @State private var nameOnCard = ""
     @State private var cardNumber = ""
     @State private var securityCode = ""
@@ -165,6 +165,6 @@ struct PaywallDemoPaymentView: View {
 
 
 #Preview {
-    PaywallDemoPaymentView()
+    PaymentView()
 }
 

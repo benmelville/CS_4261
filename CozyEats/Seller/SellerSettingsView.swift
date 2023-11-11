@@ -24,36 +24,55 @@ struct SellerSettingsView: View {
 
     var body: some View {
         NavigationView {
-            VStack {
-                HStack {
-                    NavigationLink(destination: ChangeStoreHoursView()) {
-                        Text("Change Store Hours")
-                            .foregroundColor(.white)
-                            .padding()
-                            .background(Color.green)
-                            .cornerRadius(10)
-                            .font(.headline)
-                    }
+            VStack(alignment: .leading) {
+                NavigationLink(destination: ChangeStoreHoursView()) {
+                    Text("Change Store Hours")
+                        .foregroundColor(.white)
+                        .padding()
+                        .frame(maxWidth: 600)
+                        .background(Color.green)
+                        .cornerRadius(12)
+                        .font(.system(.headline, design: .serif))
+
                 }
                 .padding(.bottom, 20)
-                .frame(width: UIScreen.main.bounds.width * 0.8)
+                .padding(.top, 20)
 
                 Divider()
 
                 Text("Change Username:")
+                    .font(.system(.headline, design: .serif))
                     .padding(.top, 10)
+                
                 TextField("Enter new username", text: $newUsername)
-                    .textFieldStyle(RoundedBorderTextFieldStyle())
+                    .font(.system(.headline, design: .serif))
+                    .padding(.leading)
+                    .frame(height: 55)
+                    .frame(maxWidth: .infinity)
+                    .background(.ultraThinMaterial)
+                    .clipShape(RoundedRectangle(cornerRadius: 10.0))
 
                 Text("Change Email:")
+                    .font(.system(.headline, design: .serif))
                     .padding(.top, 10)
                 TextField("Enter new email", text: $newEmail)
-                    .textFieldStyle(RoundedBorderTextFieldStyle())
+                    .font(.system(.headline, design: .serif))
+                    .padding(.leading)
+                    .frame(height: 55)
+                    .frame(maxWidth: .infinity)
+                    .background(.ultraThinMaterial)
+                    .clipShape(RoundedRectangle(cornerRadius: 10.0))
 
                 Text("Change Password:")
+                    .font(.system(.headline, design: .serif))
                     .padding(.top, 10)
                 SecureField("Enter new password", text: $newPassword)
-                    .textFieldStyle(RoundedBorderTextFieldStyle())
+                    .font(.system(.headline, design: .serif))
+                    .padding(.leading)
+                    .frame(height: 55)
+                    .frame(maxWidth: .infinity)
+                    .background(.ultraThinMaterial)
+                    .clipShape(RoundedRectangle(cornerRadius: 10.0))
                 
                 Spacer()
                 Divider()
@@ -61,18 +80,23 @@ struct SellerSettingsView: View {
                 // Section for User Feedback
                 VStack(alignment: .leading, spacing: 10) {
                     Text("Add Any Comments/Suggestions Below:")
-                        .bold()  // Make the text bold
+                        .font(.system(.headline, design: .serif))
                         .padding(.top, 10)
                     TextField("Enter your feedback", text: $userFeedback)
-                        .textFieldStyle(RoundedBorderTextFieldStyle())
+                        .font(.system(.headline, design: .serif))
+                        .padding(.leading)
+                        .frame(height: 55)
+                        .frame(maxWidth: .infinity)
+                        .background(.ultraThinMaterial)
+                        .clipShape(RoundedRectangle(cornerRadius: 10.0))
                 }
 
                 Spacer()
 
             }
-            .padding(20)
+            .padding(.horizontal, 8)
             .frame(maxWidth: .infinity, maxHeight: .infinity)
-            .background(Color.white)
+            .background(Color.tan)
             .navigationTitle("Seller Settings")
         }
     }
@@ -167,7 +191,9 @@ struct ChangeStoreHoursView: View {
     }
 }
 
-
+//#Preview {
+//    ChangeStoreHoursView()
+//}
 
 
 struct SellerSettingsView_Previews: PreviewProvider {
