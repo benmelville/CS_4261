@@ -50,18 +50,18 @@ Enable both individuals with a passion for pursuing a career in the culinary wor
 <!-- ROADMAP -->
 ## Customer Roadmap
 
-- [ ] Create view for cart 
-- [ ] Add items to cart functionality
+- [x] Create view for cart 
+- [x] Add items to cart functionality
 - [ ] Remove items to cart functionality
 - [ ] Update items to cart functionality
-- [ ] Integrate payment options
+- [x] Integrate payment options
 - [ ] Order tracking
 - [ ] Filter methods
 
 ## Seller Roadmap
 - [ ] Update menu item functionality
 - [ ] Delete menu item functionality
-- [ ] Set/display business hours
+- [x] Set/display business hours
 - [ ] Set/display business phone number
 - [ ] See sales records/data
 - [ ] See buyer information (after payment)
