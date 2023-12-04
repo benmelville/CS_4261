@@ -1,21 +1,43 @@
 import SwiftUI
 
-class OrderCounter: ObservableObject {
-    @Published var ordersMade: Int = 0
+@MainActor
+final class PaymentViewModel: ObservableObject {
+    @Published private(set) var user: Customer? = nil
+    
+    
+    func loadCurrentUser() async throws {
+        let authDataResult = try AuthenticationManager.shared.getAuthenticatedUser()
+        self.user = try await CustomerManager.shared.getCustomer(userId: authDataResult.uid)
+    }
+    
+    func addToSeller(menuItem: MenuItem) async throws {
+        
+        Task {
+            try await SellerManager.shared.addToSoldItems(menuItem: menuItem)
+        }
+        
+    }
+    
+    
+    
+    
 }
 
 struct PaymentView: View {
+    
+    
+    @StateObject private var viewModel = PaymentViewModel()
+    
+    
     @State private var nameOnCard = ""
     @State private var cardNumber = ""
     @State private var securityCode = ""
     @State private var expirationMonth = ""
     @State private var expirationYear = ""
     @State private var isOrderConfirmed = false
-    @ObservedObject private var orderCounter = OrderCounter()
 
     var body: some View {
         VStack(alignment: .leading, spacing: 20) {
-            Text("Select Payment Option")
             HStack {
                 Button(action: {
                     // Add action for credit card
@@ -24,7 +46,7 @@ struct PaymentView: View {
                     Image("credit")
                         .resizable()
                         .aspectRatio(contentMode: .fit)
-                        .frame(height: 30)
+                        .frame(height: 80)
                         .foregroundColor(.blue)
                         .padding(.trailing, 20)
                 }
@@ -137,34 +159,48 @@ struct PaymentView: View {
             }
             Spacer()
             HStack {
-                                Spacer()
-                                Button(action: {
-                                    isOrderConfirmed = true
-                                    orderCounter.ordersMade += 1
-                                }) {
-                                    Text("Confirm Order")
-                                        .foregroundColor(.white)
-                                        .padding()
-                                        .background(Color.green)
-                                        .cornerRadius(10)
-                                        .font(.headline)
-                                }
-                                Spacer()
+                Spacer()
+                Button(action: {
+                    //TODO: add order to seller list of orders placed.
+                    
+                    if let user = viewModel.user, var cart = user.cart {
+                        for item in cart {
+                            Task {
+                                try? await viewModel.addToSeller(menuItem: item)
                             }
-                            .fullScreenCover(isPresented: $isOrderConfirmed) {
-                                Text("Order Confirmed!")
-                                
-                            }
-                            Spacer()
+                        }
+                    }
+                    
+                }) {
+                    Text("Confirm Order")
+                        .foregroundColor(.white)
+                        .padding()
+                        .background(Color.green)
+                        .cornerRadius(10)
+                        .font(.headline)
+                }
+                Spacer()
+            }
+            .fullScreenCover(isPresented: $isOrderConfirmed) {
+                Text("Order Confirmed!")
+                
+            }
+            Spacer()
         }
+        .task {
+            try? await viewModel.loadCurrentUser()
+        }
+
         .padding(20)
-        .navigationBarTitle("Payment", displayMode: .inline)
+        .navigationBarTitle("Pay with credit card")
     }
 }
 
 
 
 #Preview {
-    PaymentView()
+    NavigationStack {
+        PaymentView()
+    }
 }
 

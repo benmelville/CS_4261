@@ -62,6 +62,7 @@ struct ShoppingCartView: View {
             NavigationLink {
                 //TODO: purchase items
                 PaymentView()
+                
             } label: {
                 Text("place order")
                     .font(.system(.title2, design: .serif))

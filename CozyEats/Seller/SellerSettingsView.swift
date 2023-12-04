@@ -45,34 +45,22 @@ struct SellerSettingsView: View {
                     .padding(.top, 10)
                 
                 TextField("Enter new username", text: $newUsername)
-                    .font(.system(.headline, design: .serif))
-                    .padding(.leading)
-                    .frame(height: 55)
-                    .frame(maxWidth: .infinity)
-                    .background(.ultraThinMaterial)
-                    .clipShape(RoundedRectangle(cornerRadius: 10.0))
+                    .cozyTextFieldStyle()
+
 
                 Text("Change Email:")
                     .font(.system(.headline, design: .serif))
                     .padding(.top, 10)
                 TextField("Enter new email", text: $newEmail)
-                    .font(.system(.headline, design: .serif))
-                    .padding(.leading)
-                    .frame(height: 55)
-                    .frame(maxWidth: .infinity)
-                    .background(.ultraThinMaterial)
-                    .clipShape(RoundedRectangle(cornerRadius: 10.0))
+                    .cozyTextFieldStyle()
+
 
                 Text("Change Password:")
                     .font(.system(.headline, design: .serif))
                     .padding(.top, 10)
                 SecureField("Enter new password", text: $newPassword)
-                    .font(.system(.headline, design: .serif))
-                    .padding(.leading)
-                    .frame(height: 55)
-                    .frame(maxWidth: .infinity)
-                    .background(.ultraThinMaterial)
-                    .clipShape(RoundedRectangle(cornerRadius: 10.0))
+                    .cozyTextFieldStyle()
+
                 
                 Spacer()
                 Divider()
@@ -83,12 +71,7 @@ struct SellerSettingsView: View {
                         .font(.system(.headline, design: .serif))
                         .padding(.top, 10)
                     TextField("Enter your feedback", text: $userFeedback)
-                        .font(.system(.headline, design: .serif))
-                        .padding(.leading)
-                        .frame(height: 55)
-                        .frame(maxWidth: .infinity)
-                        .background(.ultraThinMaterial)
-                        .clipShape(RoundedRectangle(cornerRadius: 10.0))
+                        .cozyTextFieldStyle()
                 }
 
                 Spacer()
@@ -120,80 +103,98 @@ struct ChangeStoreHoursView: View {
     @State private var sundayClose = ""
 
     var body: some View {
-        VStack(alignment: .leading, spacing: 20) {
-            Text("Monday:")
-            HStack {
-                TextField("Open time", text: $mondayOpen)
-                    .textFieldStyle(RoundedBorderTextFieldStyle())
-                Text("to")
-                TextField("Close time", text: $mondayClose)
-                    .textFieldStyle(RoundedBorderTextFieldStyle())
-            }
-            
-            Text("Tuesday:")
-            HStack {
-                TextField("Open time", text: $tuesdayOpen)
-                    .textFieldStyle(RoundedBorderTextFieldStyle())
-                Text("to")
-                TextField("Close time", text: $tuesdayClose)
-                    .textFieldStyle(RoundedBorderTextFieldStyle())
-            }
-            
-            Text("Wednesday:")
-            HStack {
-                TextField("Open time", text: $wednesdayOpen)
-                    .textFieldStyle(RoundedBorderTextFieldStyle())
-                Text("to")
-                TextField("Close time", text: $wednesdayClose)
-                    .textFieldStyle(RoundedBorderTextFieldStyle())
-            }
-            
-            Text("Thursday:")
-            HStack {
-                TextField("Open time", text: $thursdayOpen)
-                    .textFieldStyle(RoundedBorderTextFieldStyle())
-                Text("to")
-                TextField("Close time", text: $thursdayClose)
-                    .textFieldStyle(RoundedBorderTextFieldStyle())
-            }
-            
-            Text("Friday:")
-            HStack {
-                TextField("Open time", text: $fridayOpen)
-                    .textFieldStyle(RoundedBorderTextFieldStyle())
-                Text("to")
-                TextField("Close time", text: $fridayClose)
-                    .textFieldStyle(RoundedBorderTextFieldStyle())
-            }
-            
-            Text("Saturday:")
-            HStack {
-                TextField("Open time", text: $saturdayOpen)
-                    .textFieldStyle(RoundedBorderTextFieldStyle())
-                Text("to")
-                TextField("Close time", text: $saturdayClose)
-                    .textFieldStyle(RoundedBorderTextFieldStyle())
-            }
-            
-            Text("Sunday:")
-            HStack {
-                TextField("Open time", text: $sundayOpen)
-                    .textFieldStyle(RoundedBorderTextFieldStyle())
-                Text("to")
-                TextField("Close time", text: $sundayClose)
-                    .textFieldStyle(RoundedBorderTextFieldStyle())
-            }
+        ScrollView {
+            VStack(alignment: .leading, spacing: 20) {
+                Text("Monday:")
+                    .font(.system(.headline, design: .serif))
+                HStack {
+                    TextField("Open time", text: $mondayOpen)
+                        .cozyTextFieldStyle()
+                    Text("to")
+                        .font(.system(.subheadline, design: .serif))
+                    TextField("Close time", text: $mondayClose)
+                        .cozyTextFieldStyle()
+                }
+                
+                Text("Tuesday:")
+                    .font(.system(.headline, design: .serif))
 
-            Spacer()
+                HStack {
+                    TextField("Open time", text: $tuesdayOpen)
+                        .cozyTextFieldStyle()
+                    Text("to")
+                        .font(.system(.subheadline, design: .serif))
+                    TextField("Close time", text: $tuesdayClose)
+                        .cozyTextFieldStyle()
+                }
+                
+                Text("Wednesday:")
+                    .font(.system(.headline, design: .serif))
+                HStack {
+                    TextField("Open time", text: $wednesdayOpen)
+                        .cozyTextFieldStyle()
+                    Text("to")
+                        .font(.system(.subheadline, design: .serif))
+                    TextField("Close time", text: $wednesdayClose)
+                        .cozyTextFieldStyle()
+                }
+                
+                Text("Thursday:")
+                    .font(.system(.headline, design: .serif))
+                HStack {
+                    TextField("Open time", text: $thursdayOpen)
+                        .cozyTextFieldStyle()
+                    Text("to")
+                        .font(.system(.subheadline, design: .serif))
+                    TextField("Close time", text: $thursdayClose)
+                        .cozyTextFieldStyle()
+                }
+                
+                Text("Friday:")
+                    .font(.system(.headline, design: .serif))
+                HStack {
+                    TextField("Open time", text: $fridayOpen)
+                        .cozyTextFieldStyle()
+                    Text("to")
+                        .font(.system(.subheadline, design: .serif))
+                    TextField("Close time", text: $fridayClose)
+                        .cozyTextFieldStyle()
+                }
+                
+                Text("Saturday:")
+                    .font(.system(.headline, design: .serif))
+                HStack {
+                    TextField("Open time", text: $saturdayOpen)
+                        .cozyTextFieldStyle()
+                    Text("to")
+                        .font(.system(.subheadline, design: .serif))
+                    TextField("Close time", text: $saturdayClose)
+                        .cozyTextFieldStyle()
+                }
+                
+                Text("Sunday:")
+                    .font(.system(.headline, design: .serif))
+                HStack {
+                    TextField("Open time", text: $sundayOpen)
+                        .cozyTextFieldStyle()
+                    Text("to")
+                        .font(.system(.subheadline, design: .serif))
+                    TextField("Close time", text: $sundayClose)
+                        .cozyTextFieldStyle()
+                }
+
+                Spacer()
+            }
         }
-        .padding(20)
+        .padding(.horizontal, 8)
         .navigationBarTitle("Change Store Hours", displayMode: .inline)
+        .background(Color.tan)
     }
 }
 
-//#Preview {
-//    ChangeStoreHoursView()
-//}
+#Preview {
+    ChangeStoreHoursView()
+}
 
 
 struct SellerSettingsView_Previews: PreviewProvider {

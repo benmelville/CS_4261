@@ -78,7 +78,7 @@ struct FeedCellHeaderView: View {
 }
 
 #Preview {
-    FeedCellHeaderView(seller: Seller(firstName: "bruce", lastName: "wayne", userId: "asdfouyastasdfv", dateCreated: Date(), email: "batman@gmail.com", photoUrl: "", menu: nil))
+    FeedCellHeaderView(seller: Seller(firstName: "bruce", lastName: "wayne", userId: "asdfouyastasdfv", dateCreated: Date(), email: "batman@gmail.com", photoUrl: "", menu: nil, soldItems: nil))
 }
 
 //TODO: This is an optional listing, I think it is too crowded with this but would be willing to add back in if people want

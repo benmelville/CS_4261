@@ -94,5 +94,5 @@ struct MenuItemCardView: View {
 
 
 #Preview {
-    MenuItemCardView(menu: MenuItem(name: "Lasagna", price: 12, description: "This lasagna is very tasty", cuisine: "Italian", images: ["lasagna"]))
+    MenuItemCardView(menu: MenuItem(name: "Lasagna", price: 12, description: "This lasagna is very tasty", cuisine: "Italian", images: ["lasagna"], seller: Seller(firstName: "ben", lastName: "melville", userId: UUID().uuidString, dateCreated: Date(), email: "email", photoUrl: nil, menu: nil, soldItems: nil)))
 }

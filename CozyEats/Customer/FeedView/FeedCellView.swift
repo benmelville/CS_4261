@@ -209,5 +209,5 @@ struct FeedCellView: View {
 }
 
 #Preview {
-    FeedCellView(seller: Seller(firstName: "bruce", lastName: "wayne", userId: "asdfouyastasdfv", dateCreated: Date(), email: "batman@gmail.com", photoUrl: "", menu: nil))
+    FeedCellView(seller: Seller(firstName: "bruce", lastName: "wayne", userId: "asdfouyastasdfv", dateCreated: Date(), email: "batman@gmail.com", photoUrl: "", menu: [MenuItem(name: "Shepard's Pie", price: 12, description: "This is a delicious home-cooked meal that comes hot and ready", cuisine: "Irish", images: ["SYwZtpkn92go4yp5HEeCwYbnkkR2/shepherds pie /CFD98A96-7E6C-4428-A00C-8FD2089A2464.jpeg"], seller: Seller(firstName: "ben", lastName: "melville", userId: UUID().uuidString, dateCreated: Date(), email: "email@email.com", photoUrl: nil, menu: nil, soldItems: nil))], soldItems: nil))
 }

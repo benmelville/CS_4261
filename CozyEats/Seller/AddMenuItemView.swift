@@ -29,12 +29,11 @@ final class AddMenuItemViewModel: ObservableObject {
     
     func addMenuItem(name: String, price: Int, description: String, cuisine: String) {
         guard let user else { return }
-
         
         Task {
             let images = try await addMenuImages(menuItemName: name)
             print(images)
-            let menuItem = MenuItem(name: name, price: price, description: description, cuisine: cuisine, images: images)
+            let menuItem = MenuItem(name: name, price: price, description: description, cuisine: cuisine, images: images, seller: user)
             print(menuItem)
             try await SellerManager.shared.addMenuItem(userId: user.userId, menuItem: menuItem)
             self.user = try await SellerManager.shared.getSeller(userId: user.userId)

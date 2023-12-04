@@ -10,6 +10,7 @@
 		1D24CF692ACF73C400B0C848 /* CozyEatsApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D24CF682ACF73C400B0C848 /* CozyEatsApp.swift */; };
 		1D24CF6D2ACF73C600B0C848 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1D24CF6C2ACF73C600B0C848 /* Assets.xcassets */; };
 		1D24CF702ACF73C600B0C848 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1D24CF6F2ACF73C600B0C848 /* Preview Assets.xcassets */; };
+		1D3AA47A2AFF008D001F901B /* CozyTextFieldModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D3AA4792AFF008D001F901B /* CozyTextFieldModifier.swift */; };
 		1D47A8C02AFE80B10062E061 /* ShoppingCartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D47A8BF2AFE80B10062E061 /* ShoppingCartView.swift */; };
 		1D8C7A932AD79FE100497E90 /* FiveStarsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D8C7A922AD79FE100497E90 /* FiveStarsView.swift */; };
 		1D9242A32AD490DA00BD8BD8 /* RootView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D9242A22AD490DA00BD8BD8 /* RootView.swift */; };
@@ -50,6 +51,7 @@
 		1D24CF682ACF73C400B0C848 /* CozyEatsApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CozyEatsApp.swift; sourceTree = "<group>"; };
 		1D24CF6C2ACF73C600B0C848 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		1D24CF6F2ACF73C600B0C848 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		1D3AA4792AFF008D001F901B /* CozyTextFieldModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CozyTextFieldModifier.swift; sourceTree = "<group>"; };
 		1D47A8BF2AFE80B10062E061 /* ShoppingCartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShoppingCartView.swift; sourceTree = "<group>"; };
 		1D8C7A922AD79FE100497E90 /* FiveStarsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FiveStarsView.swift; sourceTree = "<group>"; };
 		1D9242A22AD490DA00BD8BD8 /* RootView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootView.swift; sourceTree = "<group>"; };
@@ -116,6 +118,7 @@
 		1D24CF672ACF73C400B0C848 /* CozyEats */ = {
 			isa = PBXGroup;
 			children = (
+				1D3AA4782AFF001F001F901B /* Modifiers */,
 				1D24CF682ACF73C400B0C848 /* CozyEatsApp.swift */,
 				1D9E259E2ADCCF1D00E32C47 /* Firebase */,
 				1D9E259D2ADCCED500E32C47 /* Seller */,
@@ -135,6 +138,14 @@
 				1D24CF6F2ACF73C600B0C848 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		1D3AA4782AFF001F001F901B /* Modifiers */ = {
+			isa = PBXGroup;
+			children = (
+				1D3AA4792AFF008D001F901B /* CozyTextFieldModifier.swift */,
+			);
+			path = Modifiers;
 			sourceTree = "<group>";
 		};
 		1D92429F2AD48F1A00BD8BD8 /* Views */ = {
@@ -330,6 +341,7 @@
 				1D9E25A02ADD9FF700E32C47 /* SellerProfileView.swift in Sources */,
 				1DDFF0292AFDEDDE00CDEE22 /* OrderView.swift in Sources */,
 				1D9E25A22ADDA01D00E32C47 /* SellerHomeView.swift in Sources */,
+				1D3AA47A2AFF008D001F901B /* CozyTextFieldModifier.swift in Sources */,
 				1DEC47982ADBB26300D1B455 /* AuthDataResultModel.swift in Sources */,
 				1DEC47902ADB800D00D1B455 /* SignInWithEmailView.swift in Sources */,
 				1D9242A72AD5BE6800BD8BD8 /* CustomerHomeView.swift in Sources */,

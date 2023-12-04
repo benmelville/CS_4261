@@ -27,7 +27,6 @@ final class OrderViewModel: ObservableObject {
         
         guard let user else { return }
         
-        
 
         Task {
             try await CustomerManager.shared.addToCart(userId: user.userId, menuItem: menuItem, quantity: quantity)
@@ -79,7 +78,7 @@ struct OrderView: View {
                         .background(.secondary)
                     
                     HStack {
-                        Text("here is what he has to say about it: ").fontWeight(.bold) +
+                        Text("here is what they have to say about it: ").fontWeight(.bold) +
                         Text("\(menuItem.description ?? "n/a")").fontWeight(.light)
                     }
                     .font(.system(.title2, design: .serif))
@@ -157,11 +156,7 @@ struct OrderView: View {
                         .padding(.bottom, 25)
 
                     
-                    
-                    
-                    
                     Spacer()
-                    
                     
                     
                     Button {
@@ -230,6 +225,6 @@ struct OrderView: View {
 
 #Preview {
     NavigationStack {
-        OrderView(menuItem: MenuItem(name: "lassagna", price: 23, description: "this food is so flipping good dawg", cuisine: "Italian", images: ["tU8uEBX40sRUvc9VuBJ8DVfmaHG2/tacos/7913E4CC-6788-48D3-9C63-F73FA911C4FE.jpeg"]), seller: Seller(firstName: "bruce", lastName: "wayne", userId: "asdfouyastasdfv", dateCreated: Date(), email: "batman@gmail.com", photoUrl: "", menu: nil))
+        OrderView(menuItem: MenuItem(name: "lassagna", price: 23, description: "this food is so flipping good dawg", cuisine: "Italian", images: ["tU8uEBX40sRUvc9VuBJ8DVfmaHG2/tacos/7913E4CC-6788-48D3-9C63-F73FA911C4FE.jpeg"], seller: Seller(firstName: "bruce", lastName: "wayne", userId: "asdfouyastasdfv", dateCreated: Date(), email: "batman@gmail.com", photoUrl: "", menu: nil, soldItems: nil)), seller: Seller(firstName: "bruce", lastName: "wayne", userId: "asdfouyastasdfv", dateCreated: Date(), email: "batman@gmail.com", photoUrl: "", menu: nil, soldItems: nil))
     }
 }

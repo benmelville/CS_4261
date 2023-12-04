@@ -113,8 +113,9 @@ final class CustomerManager {
         return try await customerDocument(userId: userId).getDocument(as: Customer.self)
     }
     
+    
+    
     func addToCart(userId: String, menuItem: MenuItem, quantity: Int) async throws {
-        
         
         guard let data = try? encoder.encode(menuItem) else {
             throw URLError(.badURL)
