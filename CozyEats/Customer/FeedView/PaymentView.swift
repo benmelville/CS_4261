@@ -170,6 +170,7 @@ struct PaymentView: View {
                             }
                         }
                     }
+                    isOrderConfirmed.toggle()
                     
                 }) {
                     Text("Confirm Order")
@@ -181,7 +182,7 @@ struct PaymentView: View {
                 }
                 Spacer()
             }
-            .fullScreenCover(isPresented: $isOrderConfirmed) {
+            .sheet(isPresented: $isOrderConfirmed) {
                 Text("Order Confirmed!")
                 
             }
