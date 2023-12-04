@@ -31,126 +31,127 @@ struct FeedCellView: View {
     @State var isLiked: Bool = false
     @State var showSheet: Bool = false
     
-    let seller: Seller
+    let menuItem: MenuItem
     
     var body: some View {
-        
-        VStack(alignment: .leading, spacing: 0) {
+        if let seller = menuItem.seller {
             
-            VStack {
-                FeedCellHeaderView(seller: seller)
-                    .padding(.bottom, 12)
+            VStack(alignment: .leading, spacing: 0) {
+                
+                VStack {
+                    FeedCellHeaderView(menuItem: menuItem)
+                        .padding(.bottom, 12)
+                        .padding(.horizontal, 8)
+                    
+                    
+                    
+                    
+                    if let image = viewModel.image {
+                        Image(uiImage: image)
+                            .resizable()
+                            .scaledToFill()
+                            .frame(width: 400, height: 400)
+                            .clipped()
+                            .clipShape(RoundedRectangle(cornerRadius: 12.0))
+                            .overlay(alignment: .topTrailing) {
+                                VStack {
+                                    if let cuisine = menuItem.cuisine {
+                                        Text(cuisine)
+                                            .font(.system(.footnote, design: .serif))
+                                            .foregroundStyle(.black)
+                                            .fontWeight(.semibold)
+                                            .padding(4)
+                                    }
+                                    
+                                }
+                                .background(.ultraThinMaterial)
+                                .clipShape(RoundedRectangle(cornerRadius: 4))
+                                .padding(.top)
+                                .padding(.trailing)
+                            }
+                            .overlay(alignment: .bottomLeading) {
+                                
+                                Button {
+                                    showSheet.toggle()
+                                    
+                                } label: {
+                                    HStack {
+                                        Text("$\(menuItem.price ?? 0)").foregroundColor(.black.opacity(0.6)) +
+                                        Text(" order here")
+                                            .foregroundColor(.black)
+                                        
+                                    }
+                                    .font(.system(.title2, design: .serif))
+                                    .fontWeight(.semibold)
+                                    .frame(height: 50)
+                                    .padding(.horizontal)
+                                    .background(.ultraThinMaterial)
+                                    .clipShape(RoundedRectangle(cornerRadius: 12.0))
+                                    .padding(.bottom)
+                                    .padding(.leading)
+                                }
+                                .sheet(isPresented: $showSheet) {
+                                    OrderView(menuItem: menuItem, seller: seller)
+                                }
+                                
+                                
+                            }
+                        
+                        
+                        
+                    } else {
+                        
+                        ProgressView()
+                            .frame(width: 400, height: 400)
+                        
+                        //                    Text("NO IMAGE")
+                        //                        .frame(width: 400, height: 400)
+                    }
+                    //            Image("\(seller.menu?.first?.images.first ?? "lasagna")")
+                    //                .resizable()
+                    //                .scaledToFill()
+                    //                .frame(height: 400)
+                }
+                
+                
+                HStack {
+                    Text("34 likes")
+                        .font(.system(.footnote, design: .serif))
+                        .fontWeight(.semibold)
+                        .onTapGesture {
+                            print("liked image")
+                        }
+                    
+                    Spacer()
+                    
+                    Text("15 comments")
+                        .font(.system(.footnote, design: .serif))
+                        .foregroundStyle(.secondary)
+                        .onTapGesture {
+                            print("comments")
+                        }
+                }
+                .frame(height: 16)
+                .padding(.vertical, 14)
+                .padding(.horizontal, 8)
+                
+                Divider()
                     .padding(.horizontal, 8)
                 
                 
+                FeedCellActionBar()
                 
-                if let image = viewModel.image {
-                    Image(uiImage: image)
-                        .resizable()
-                        .scaledToFill()
-                        .frame(width: 400, height: 400)
-                        .clipped()
-                        .clipShape(RoundedRectangle(cornerRadius: 12.0))
-                        .overlay(alignment: .topTrailing) {
-                            VStack {
-                                if let cuisine = seller.menu?.first?.cuisine {
-                                    Text(cuisine)
-                                        .font(.system(.footnote, design: .serif))
-                                        .foregroundStyle(.black)
-                                        .fontWeight(.semibold)
-                                        .padding(4)
-                                }
-                                
-                            }
-                            .background(.ultraThinMaterial)
-                            .clipShape(RoundedRectangle(cornerRadius: 4))
-                            .padding(.top)
-                            .padding(.trailing)
-                        }
-                        .overlay(alignment: .bottomLeading) {
-                            
-                            Button {
-                                showSheet.toggle()
-                                
-                            } label: {
-                                HStack {
-                                    Text("$\(seller.menu?.first?.price?.description ?? "n/a")").foregroundColor(.black.opacity(0.6)) +
-                                    Text(" order here")
-                                        .foregroundColor(.black)
-
-                                }
-                                .font(.system(.title2, design: .serif))
-                                .fontWeight(.semibold)
-                                .frame(height: 50)
-                                .padding(.horizontal)
-                                .background(.ultraThinMaterial)
-                                .clipShape(RoundedRectangle(cornerRadius: 12.0))
-                                .padding(.bottom)
-                                .padding(.leading)
-                            }
-                            .sheet(isPresented: $showSheet) {
-                                if let menu = seller.menu {
-                                    OrderView(menuItem: menu.first!, seller: seller)
-                                }
-                            }
-
-
-                        }
-
-                    
-                    
-                } else {
-                    
-                    ProgressView()
-                        .frame(width: 400, height: 400)
-
-//                    Text("NO IMAGE")
-//                        .frame(width: 400, height: 400)
-                }
-                //            Image("\(seller.menu?.first?.images.first ?? "lasagna")")
-                //                .resizable()
-                //                .scaledToFill()
-                //                .frame(height: 400)
+                Rectangle()
+                    .frame(maxWidth: .infinity)
+                    .frame(height: 3)
+                
+                    .foregroundStyle(.secondary.opacity(0.6))
+                    .ignoresSafeArea()
+                
             }
-            
-            
-            HStack {
-                Text("34 likes")
-                    .font(.system(.footnote, design: .serif))
-                    .fontWeight(.semibold)
-                    .onTapGesture {
-                        print("liked image")
-                    }
-                
-                Spacer()
-                
-                Text("15 comments")
-                    .font(.system(.footnote, design: .serif))
-                    .foregroundStyle(.secondary)
-                    .onTapGesture {
-                        print("comments")
-                    }
+            .task {
+                try? await viewModel.loadMenuImage(imageUrl: menuItem.images.first ?? "")
             }
-            .frame(height: 16)
-            .padding(.vertical, 14)
-            .padding(.horizontal, 8)
-            
-            Divider()
-                .padding(.horizontal, 8)
-            
-            
-            FeedCellActionBar()
-            
-            Rectangle()
-                .frame(maxWidth: .infinity)
-                .frame(height: 3)
-            
-                .foregroundStyle(.secondary.opacity(0.6))
-                .ignoresSafeArea()
-            
-        }
-        .task {
-            try? await viewModel.loadMenuImage(imageUrl: seller.menu?.first?.images.first ?? "")
         }
         
         
@@ -209,5 +210,5 @@ struct FeedCellView: View {
 }
 
 #Preview {
-    FeedCellView(seller: Seller(firstName: "bruce", lastName: "wayne", userId: "asdfouyastasdfv", dateCreated: Date(), email: "batman@gmail.com", photoUrl: "", menu: [MenuItem(name: "Shepard's Pie", price: 12, description: "This is a delicious home-cooked meal that comes hot and ready", cuisine: "Irish", images: ["SYwZtpkn92go4yp5HEeCwYbnkkR2/shepherds pie /CFD98A96-7E6C-4428-A00C-8FD2089A2464.jpeg"], seller: Seller(firstName: "ben", lastName: "melville", userId: UUID().uuidString, dateCreated: Date(), email: "email@email.com", photoUrl: nil, menu: nil, soldItems: nil))], soldItems: nil))
+    FeedCellView(menuItem: MenuItem(name: "Lasagana", price: 12, description: "TASTY LASAGNA", cuisine: "italian", images: [], seller: Seller(firstName: "ben", lastName: "melville", userId: UUID().uuidString, dateCreated: Date(), email: "ben@gmail.com", photoUrl: nil, menu: nil, soldItems: nil)))
 }

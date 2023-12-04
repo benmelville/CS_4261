@@ -9,7 +9,7 @@ import SwiftUI
 
 struct FeedCellHeaderView: View {
     
-    let seller: Seller
+    let menuItem: MenuItem
     let dateFormatter = DateFormatter()
 
     func createFormatter() {
@@ -25,10 +25,11 @@ struct FeedCellHeaderView: View {
                     .scaledToFill()
                     .frame(width: 40, height: 40)
                     .clipShape(Circle())
-                
-                Text("\(seller.firstName ?? "") \(seller.lastName ?? "")")
-                    .font(.system(.subheadline, design: .serif))
-                    .fontWeight(.semibold)
+                if let seller = menuItem.seller {
+                    Text("\(seller.firstName ?? "") \(seller.lastName ?? "")")
+                        .font(.system(.subheadline, design: .serif))
+                        .fontWeight(.semibold)
+                }
                 
                 Image(systemName: "checkmark.seal.fill")
                     .resizable()
@@ -40,8 +41,10 @@ struct FeedCellHeaderView: View {
                 Spacer()
                 
                 HStack {
-                    Text(seller.dateCreated ?? Date(), style: .date)
-                    Text(seller.dateCreated ?? Date(), style: .time)
+                    if let seller = menuItem.seller {
+                        Text(seller.dateCreated ?? Date(), style: .date)
+                        Text(seller.dateCreated ?? Date(), style: .time)
+                    }
                 }
                 .font(.system(.footnote, design: .serif))
                 .foregroundStyle(.secondary)
@@ -54,12 +57,11 @@ struct FeedCellHeaderView: View {
 
             
             VStack(alignment: .leading) {
-                
-                Text("\(seller.menu?.first?.name ?? "no name")")
+                Text("\(menuItem.name )")
                     .font(.system(.title3, design: .serif))
                     .fontWeight(.semibold)
                 
-                Text("\(seller.menu?.first?.description ?? "")")
+                Text("\(menuItem.description ?? "")")
                     .font(.system(.caption, design: .serif))
                     .lineLimit(2)
                     .fixedSize(horizontal: false, vertical: true)
@@ -78,7 +80,7 @@ struct FeedCellHeaderView: View {
 }
 
 #Preview {
-    FeedCellHeaderView(seller: Seller(firstName: "bruce", lastName: "wayne", userId: "asdfouyastasdfv", dateCreated: Date(), email: "batman@gmail.com", photoUrl: "", menu: nil, soldItems: nil))
+    FeedCellHeaderView(menuItem: MenuItem(name: "Lasagana", price: 12, description: "TASTY LASAGNA", cuisine: "italian", images: [], seller: Seller(firstName: "ben", lastName: "melville", userId: UUID().uuidString, dateCreated: Date(), email: "ben@gmail.com", photoUrl: nil, menu: nil, soldItems: nil)))
 }
 
 //TODO: This is an optional listing, I think it is too crowded with this but would be willing to add back in if people want

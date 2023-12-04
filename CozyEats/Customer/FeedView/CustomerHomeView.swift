@@ -14,6 +14,7 @@ final class CustomerViewModel: ObservableObject {
     
     @Published private(set) var user: Customer? = nil
     @Published var sellers: [Seller]? = nil
+    @Published var menuItems: [MenuItem] = []
     
     func loadCurrentUser() async throws {
         let authDataResult = try AuthenticationManager.shared.getAuthenticatedUser()
@@ -25,6 +26,16 @@ final class CustomerViewModel: ObservableObject {
     func getAllSellers() async throws {
         let sellers: [Seller] = try await SellerManager.shared.getAllSellers()
         self.sellers = sellers
+                
+        for seller in sellers {
+            if let menu = seller.menu {
+                for menuItem in menu {
+                    menuItems.append(menuItem)
+                }
+            }
+        }
+        
+        
     }
     
 }
@@ -82,12 +93,14 @@ struct CustomerHomeView: View {
                         .overlay(.accent)
                         .padding()
                     
-                    if let sellers = viewModel.sellers {
+                    if viewModel.sellers != nil {
                         
-                        ForEach(sellers, id: \.self) { seller in
-                            
-                            FeedCellView(seller: seller)
-
+                        ForEach(viewModel.menuItems, id: \.self) { menuItem in
+                            if let _ = menuItem.seller {
+                                FeedCellView(menuItem: menuItem)
+                                
+                            }
+//                            FeedCellView(seller: seller)
                         }
                     }
                 }
